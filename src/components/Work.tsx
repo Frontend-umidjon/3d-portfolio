@@ -6,6 +6,8 @@ import { useGSAP } from "@gsap/react";
 import biletick from "../assets/biletick show.png";
 import commerce from "../assets/commerce.png";
 import byDesign from "../assets/by design.png";
+import portfolioImg from '../assets/image.png'
+import admin from "../assets/image copy.png";
 
 gsap.registerPlugin(useGSAP);
 
@@ -21,8 +23,8 @@ const projects = [
     title: "Portfolio Website",
     category: "Personal",
     tools: "React, TypeScript, GSAP",
-    image: "/images/portfolio.webp",
-    link: "https://your-portfolio-link.com",
+    image: portfolioImg,
+    link: "https://3d-portfolio-ruby-delta.vercel.app/",
   },
   {
     title: "Commercial Website",
@@ -38,6 +40,13 @@ const projects = [
     image: byDesign,
     link: "https://6-8-two.vercel.app/",
   },
+  {
+    title: "Admin Panel",
+    category: "FreeLance",
+    tools: "React, TailwindCSS, RTK Query",
+    image: admin,
+    link: "admin.milliardev.com",
+  }
 ];
 
 const Work = () => {
