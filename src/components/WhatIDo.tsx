@@ -7,6 +7,7 @@ const WhatIDo = () => {
   const setRef = (el: HTMLDivElement | null, index: number) => {
     containerRef.current[index] = el;
   };
+
   useEffect(() => {
     if (ScrollTrigger.isTouch) {
       containerRef.current.forEach((container) => {
@@ -19,11 +20,14 @@ const WhatIDo = () => {
     return () => {
       containerRef.current.forEach((container) => {
         if (container) {
-          container.removeEventListener("click", () => handleClick(container));
+          container.removeEventListener("click", () =>
+            handleClick(container)
+          );
         }
       });
     };
   }, []);
+
   return (
     <div className="whatIDO">
       <div className="what-box">
@@ -58,6 +62,8 @@ const WhatIDo = () => {
               />
             </svg>
           </div>
+
+          {/* First Card - DEVELOP */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 0)}
@@ -85,30 +91,33 @@ const WhatIDo = () => {
               </svg>
             </div>
             <div className="what-corner"></div>
-
             <div className="what-content-in">
               <h3>DEVELOP</h3>
-              <h4>Description</h4>
+              <h4>Overview</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+                I’m a frontend developer focused on building responsive,
+                high-quality web-apps that combine performance and modern design
+                aesthetics.
               </p>
-              <h5>Skillset & tools</h5>
+              <h5>Core Skills & Tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">JavaScript</div>
                 <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
+                <div className="what-tags">HTML</div>
+                <div className="what-tags">CSS</div>
+                <div className="what-tags">Sass</div>
                 <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
-                <div className="what-tags">Node.js</div>
                 <div className="what-tags">Next.js</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
+                <div className="what-tags">TailwindCSS</div>
+                <div className="what-tags">RTK Query</div>
+                <div className="what-tags">i18n</div>
+
               </div>
               <div className="what-arrow"></div>
             </div>
           </div>
+
+          {/* Second Card - Workflow & Mindset */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 1)}
@@ -128,22 +137,25 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DESIGN</h3>
-              <h4>Description</h4>
+              <h3>Workflow & Mindset</h3>
+              <h4>Overview</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                My approach to development is detail-oriented and user-focused.
+                I value clean architecture, modular code, and seamless user
+                experience. I enjoy solving real problems through code and
+                turning complex ideas into intuitive, fast, and reliable
+                interfaces.
               </p>
-              <h5>Skillset & tools</h5>
+              <h5>Core Principles</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
+                <div className="what-tags">Performance First</div>
+                <div className="what-tags">Reusable Components</div>
+                <div className="what-tags">Scalable Code</div>
+                <div className="what-tags">Responsive Design</div>
+                <div className="what-tags">Clean Architecture</div>
+                <div className="what-tags">Accessibility</div>
+                <div className="what-tags">UX Thinking</div>
+                <div className="what-tags">Maintainability</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -161,7 +173,6 @@ function handleClick(container: HTMLDivElement) {
   container.classList.remove("what-sibling");
   if (container.parentElement) {
     const siblings = Array.from(container.parentElement.children);
-
     siblings.forEach((sibling) => {
       if (sibling !== container) {
         sibling.classList.remove("what-content-active");

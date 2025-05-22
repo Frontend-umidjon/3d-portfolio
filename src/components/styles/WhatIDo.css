@@ -84,6 +84,7 @@
   opacity: 0;
   animation: whatFlicker 0.5s 1 forwards;
   animation-delay: 1s;
+  overflow: auto;
 }
 @keyframes whatFlicker {
   0%,
